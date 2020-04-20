@@ -64,64 +64,72 @@ fn start_fs_watcher(
     let mut watcher = RecommendedWatcher::new(sender, Duration::from_millis(100))
         .map_err(|e| format!("Error watching file system: {}", e))?;
 
-    watcher
-        .watch(&source_dir, RecursiveMode::Recursive)
-        .and_then(|_| watcher.watch(&theme_dir, RecursiveMode::Recursive))
-        .and_then(|_| watcher.watch(&book.root.join("book.toml"), RecursiveMode::NonRecursive))
-        .map_err(|e| format!("Couldn't watch book directory: {}", e))?;
+    let mut watching_something = false;
+    for watch_path in &[&source_dir, &theme_dir, &book.root.join("book.toml")] {
+        match watcher.watch(watch_path, RecursiveMode::Recursive) {
+            Ok(_) => watching_something = true,
+            Err(e) => warn!("Couldn't watch book directory '{:?}': {}", watch_path, e),
+        }
+    }
 
-    let shutdown = Arc::new(AtomicBool::new(false));
-    let fs_shutdown = shutdown.clone();
-    thread::spawn(move || {
-        // take ownership of watcher in this thread so that we can drop it when we're done
-        let _ = watcher;
-        let reload_event = "reload".to_string();
+    if watching_something {
+        let shutdown = Arc::new(AtomicBool::new(false));
+        let fs_shutdown = shutdown.clone();
+        thread::spawn(move || {
+            // take ownership of watcher in this thread so that we can drop it when we're done
+            let _ = watcher;
+            let reload_event = "reload".to_string();
 
-        // check if we should shutdown every loop
-        while !fs_shutdown.load(Ordering::Relaxed) {
-            // only wait for 1 second, we want to make sure to check our shutdown status
-            match receiver.recv_timeout(Duration::from_secs(1)) {
-                Ok(first_event) => {
-                    thread::sleep(Duration::from_millis(50));
-                    let other_events = receiver.try_iter();
+            // check if we should shutdown every loop
+            while !fs_shutdown.load(Ordering::Relaxed) {
+                // only wait for 1 second, we want to make sure to check our shutdown status
+                match receiver.recv_timeout(Duration::from_secs(1)) {
+                    Ok(first_event) => {
+                        thread::sleep(Duration::from_millis(50));
+                        let other_events = receiver.try_iter();
 
-                    let all_events = std::iter::once(first_event).chain(other_events);
+                        let all_events = std::iter::once(first_event).chain(other_events);
 
-                    let paths = all_events.filter_map(|event| {
-                        trace!("Received filesystem event: {:?}", event);
+                        let paths = all_events.filter_map(|event| {
+                            trace!("Received filesystem event: {:?}", event);
 
-                        match event {
-                            DebouncedEvent::Create(path)
-                            | DebouncedEvent::Write(path)
-                            | DebouncedEvent::Remove(path)
-                            | DebouncedEvent::Rename(_, path) => Some(path),
-                            _ => None,
+                            match event {
+                                DebouncedEvent::Create(path)
+                                | DebouncedEvent::Write(path)
+                                | DebouncedEvent::Remove(path)
+                                | DebouncedEvent::Rename(_, path) => Some(path),
+                                _ => None,
+                            }
+                        });
+
+                        if found_unignored_files(paths, &book_dir) {
+                            debug!("Reloading book: {:?}", book_dir);
+
+                            match build_book(&book_dir, &livereload_url) {
+                                Ok(_) => (),
+                                Err(e) => warn!("Couldn't rebuild the book: {}", e),
+                            }
+
+                            // according to the doc, an error means there were no receivers, so ignore it
+                            let _ = broadcast.send(reload_event.clone());
                         }
-                    });
-
-                    if found_unignored_files(paths, &book_dir) {
-                        debug!("Reloading book: {:?}", book_dir);
-
-                        match build_book(&book_dir, &livereload_url) {
-                            Ok(_) => (),
-                            Err(e) => warn!("Couldn't rebuild the book: {}", e),
-                        }
-
-                        // according to the doc, an error means there were no receivers, so ignore it
-                        let _ = broadcast.send(reload_event.clone());
+                    }
+                    Err(RecvTimeoutError::Timeout) => (), // ignore timeouts
+                    Err(RecvTimeoutError::Disconnected) => {
+                        // on disconnect, we can stop checking for fs events
+                        break;
                     }
                 }
-                Err(RecvTimeoutError::Timeout) => (), // ignore timeouts
-                Err(RecvTimeoutError::Disconnected) => {
-                    // on disconnect, we can stop checking for fs events
-                    break;
-                }
             }
-        }
-        info!("Stopped watching the fs for {:?}", source_dir);
-    });
+            info!("Stopped watching the fs for {:?}", source_dir);
+        });
 
-    Ok(shutdown)
+        Ok(shutdown)
+    } else {
+        // Nothing to watch so just start in shutdown
+        warn!("Couldn't watch the filesystem for {:?}", book_dir);
+        Ok(Arc::new(AtomicBool::new(true)))
+    }
 }
 
 fn found_unignored_files<I>(mut paths: I, book_dir: &PathBuf) -> bool
