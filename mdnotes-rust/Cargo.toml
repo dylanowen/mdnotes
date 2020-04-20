@@ -1,0 +1,56 @@
+[package]
+name = "mdnotes"
+version = "0.0.1"
+authors = ["Dylan Owen <dyltotheo@gmail.com>"]
+description = "sync mdbook to confluence"
+readme = "Readme.md"
+license = "MPL-2.0"
+homepage = "https://github.com/dylanowen/mdbook-confluence"
+repository = "https://github.com/dylanowen/mdbook-confluence"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["lib", "staticlib"]
+
+[dependencies]
+log = "0.4"
+env_logger = "0.7"
+
+mdbook = { version = "0.3" }
+
+# Find the home directory for guessing the environment
+dirs = "2.0"
+
+# concurrency libraries
+futures = "0.3"
+tokio = { version = "0.2", features = ["macros"] }
+dashmap = "3.11"
+
+# Our Server
+warp = "0.2"
+
+# Support for watching for changes on disk
+notify = "4.0"
+gitignore = "1.0"
+
+# Support for warp_fs
+headers = "0.3.2"
+bytes = "0.5.4"
+http = "0.2"
+mime_guess = "2.0"
+urlencoding = "1.0"
+
+#tungstenite = "0.10"
+#iron = "0.6"
+#staticfile = "0.5"
+#objc = { version = "0.2", features = ["exception"] }
+#cocoa = "0.20"
+#web-view = "0.6"
+#rustkit = "0.0.1"
+
+#[dependencies.cacao]
+#git = "https://github.com/ryanmcgrath/cacao"
+#rev = "47ddf7f5"
+#features = ["webview"]

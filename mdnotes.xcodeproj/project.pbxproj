@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		543435DE243ABCE500E0D316 /* MdNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543435DD243ABCE500E0D316 /* MdNotes.swift */; };
+		5472DE6424395BF50033E4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE6324395BF50033E4BA /* AppDelegate.swift */; };
+		5472DE6624395BF50033E4BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE6524395BF50033E4BA /* ContentView.swift */; };
+		5472DE6824395BF60033E4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5472DE6724395BF60033E4BA /* Assets.xcassets */; };
+		5472DE6B24395BF60033E4BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5472DE6A24395BF60033E4BA /* Preview Assets.xcassets */; };
+		5472DE6E24395BF60033E4BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5472DE6C24395BF60033E4BA /* Main.storyboard */; };
+		5472DE7A24395BF60033E4BA /* mdnotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE7924395BF60033E4BA /* mdnotesTests.swift */; };
+		5472DE8524395BF60033E4BA /* mdnotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE8424395BF60033E4BA /* mdnotesUITests.swift */; };
+		54CDF97D2439AD44006BAB2D /* libmdnotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CDF9792439AD23006BAB2D /* libmdnotes.a */; };
+		54CDF9822439B14C006BAB2D /* libresolv.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 54CDF9812439B14C006BAB2D /* libresolv.9.dylib */; };
+		54F5015F243972D200035478 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F5015E243972D200035478 /* WebView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5472DE7624395BF60033E4BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5472DE5824395BF50033E4BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5472DE5F24395BF50033E4BA;
+			remoteInfo = mdnotes;
+		};
+		5472DE8124395BF60033E4BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5472DE5824395BF50033E4BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5472DE5F24395BF50033E4BA;
+			remoteInfo = mdnotes;
+		};
+		54CDF9782439AD23006BAB2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54CDF9722439AD23006BAB2D /* mdnotes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA60E16168AF47A475161DD4;
+			remoteInfo = "mdnotes-staticlib";
+		};
+		54CDF97A2439AD23006BAB2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54CDF9722439AD23006BAB2D /* mdnotes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CA60E9D01875D45746CC6A59;
+			remoteInfo = "mdnotes-bin";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		543435DD243ABCE500E0D316 /* MdNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MdNotes.swift; sourceTree = "<group>"; };
+		5472DE6024395BF50033E4BA /* mdnotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdnotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5472DE6324395BF50033E4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5472DE6524395BF50033E4BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5472DE6724395BF60033E4BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5472DE6A24395BF60033E4BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5472DE6D24395BF60033E4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5472DE6F24395BF60033E4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5472DE7024395BF60033E4BA /* mdnotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mdnotes.entitlements; sourceTree = "<group>"; };
+		5472DE7524395BF60033E4BA /* mdnotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mdnotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5472DE7924395BF60033E4BA /* mdnotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mdnotesTests.swift; sourceTree = "<group>"; };
+		5472DE7B24395BF60033E4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5472DE8024395BF60033E4BA /* mdnotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mdnotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5472DE8424395BF60033E4BA /* mdnotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mdnotesUITests.swift; sourceTree = "<group>"; };
+		5472DE8624395BF60033E4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54CDF9722439AD23006BAB2D /* mdnotes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mdnotes.xcodeproj; path = "mdnotes-rust/mdnotes.xcodeproj"; sourceTree = "<group>"; };
+		54CDF97E2439B019006BAB2D /* mdnotes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mdnotes-Bridging-Header.h"; sourceTree = "<group>"; };
+		54CDF9812439B14C006BAB2D /* libresolv.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.9.dylib; path = ../../../../usr/lib/libresolv.9.dylib; sourceTree = "<group>"; };
+		54F5015E243972D200035478 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5472DE5D24395BF50033E4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54CDF9822439B14C006BAB2D /* libresolv.9.dylib in Frameworks */,
+				54CDF97D2439AD44006BAB2D /* libmdnotes.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5472DE7224395BF60033E4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5472DE7D24395BF60033E4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5472DE5724395BF50033E4BA = {
+			isa = PBXGroup;
+			children = (
+				5472DE6224395BF50033E4BA /* mdnotes */,
+				5472DE7824395BF60033E4BA /* mdnotesTests */,
+				5472DE8324395BF60033E4BA /* mdnotesUITests */,
+				5472DE6124395BF50033E4BA /* Products */,
+				54CDF97C2439AD44006BAB2D /* Frameworks */,
+				54CDF9722439AD23006BAB2D /* mdnotes.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		5472DE6124395BF50033E4BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5472DE6024395BF50033E4BA /* mdnotes.app */,
+				5472DE7524395BF60033E4BA /* mdnotesTests.xctest */,
+				5472DE8024395BF60033E4BA /* mdnotesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5472DE6224395BF50033E4BA /* mdnotes */ = {
+			isa = PBXGroup;
+			children = (
+				5472DE6324395BF50033E4BA /* AppDelegate.swift */,
+				5472DE6524395BF50033E4BA /* ContentView.swift */,
+				543435DD243ABCE500E0D316 /* MdNotes.swift */,
+				54F5015E243972D200035478 /* WebView.swift */,
+				54CDF97E2439B019006BAB2D /* mdnotes-Bridging-Header.h */,
+				5472DE6724395BF60033E4BA /* Assets.xcassets */,
+				5472DE6C24395BF60033E4BA /* Main.storyboard */,
+				5472DE6F24395BF60033E4BA /* Info.plist */,
+				5472DE7024395BF60033E4BA /* mdnotes.entitlements */,
+				5472DE6924395BF60033E4BA /* Preview Content */,
+			);
+			path = mdnotes;
+			sourceTree = "<group>";
+		};
+		5472DE6924395BF60033E4BA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5472DE6A24395BF60033E4BA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5472DE7824395BF60033E4BA /* mdnotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5472DE7924395BF60033E4BA /* mdnotesTests.swift */,
+				5472DE7B24395BF60033E4BA /* Info.plist */,
+			);
+			path = mdnotesTests;
+			sourceTree = "<group>";
+		};
+		5472DE8324395BF60033E4BA /* mdnotesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5472DE8424395BF60033E4BA /* mdnotesUITests.swift */,
+				5472DE8624395BF60033E4BA /* Info.plist */,
+			);
+			path = mdnotesUITests;
+			sourceTree = "<group>";
+		};
+		54CDF9732439AD23006BAB2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54CDF9792439AD23006BAB2D /* libmdnotes.a */,
+				54CDF97B2439AD23006BAB2D /* mdnotes */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54CDF97C2439AD44006BAB2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54CDF9812439B14C006BAB2D /* libresolv.9.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5472DE5F24395BF50033E4BA /* mdnotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5472DE8924395BF60033E4BA /* Build configuration list for PBXNativeTarget "mdnotes" */;
+			buildPhases = (
+				5472DE5C24395BF50033E4BA /* Sources */,
+				5472DE5D24395BF50033E4BA /* Frameworks */,
+				5472DE5E24395BF50033E4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mdnotes;
+			packageProductDependencies = (
+			);
+			productName = mdnotes;
+			productReference = 5472DE6024395BF50033E4BA /* mdnotes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5472DE7424395BF60033E4BA /* mdnotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5472DE8C24395BF60033E4BA /* Build configuration list for PBXNativeTarget "mdnotesTests" */;
+			buildPhases = (
+				5472DE7124395BF60033E4BA /* Sources */,
+				5472DE7224395BF60033E4BA /* Frameworks */,
+				5472DE7324395BF60033E4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5472DE7724395BF60033E4BA /* PBXTargetDependency */,
+			);
+			name = mdnotesTests;
+			productName = mdnotesTests;
+			productReference = 5472DE7524395BF60033E4BA /* mdnotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5472DE7F24395BF60033E4BA /* mdnotesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5472DE8F24395BF60033E4BA /* Build configuration list for PBXNativeTarget "mdnotesUITests" */;
+			buildPhases = (
+				5472DE7C24395BF60033E4BA /* Sources */,
+				5472DE7D24395BF60033E4BA /* Frameworks */,
+				5472DE7E24395BF60033E4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5472DE8224395BF60033E4BA /* PBXTargetDependency */,
+			);
+			name = mdnotesUITests;
+			productName = mdnotesUITests;
+			productReference = 5472DE8024395BF60033E4BA /* mdnotesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5472DE5824395BF50033E4BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Dylan Owen";
+				TargetAttributes = {
+					5472DE5F24395BF50033E4BA = {
+						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
+					};
+					5472DE7424395BF60033E4BA = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 5472DE5F24395BF50033E4BA;
+					};
+					5472DE7F24395BF60033E4BA = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 5472DE5F24395BF50033E4BA;
+					};
+				};
+			};
+			buildConfigurationList = 5472DE5B24395BF50033E4BA /* Build configuration list for PBXProject "mdnotes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5472DE5724395BF50033E4BA;
+			packageReferences = (
+			);
+			productRefGroup = 5472DE6124395BF50033E4BA /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 54CDF9732439AD23006BAB2D /* Products */;
+					ProjectRef = 54CDF9722439AD23006BAB2D /* mdnotes.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5472DE5F24395BF50033E4BA /* mdnotes */,
+				5472DE7424395BF60033E4BA /* mdnotesTests */,
+				5472DE7F24395BF60033E4BA /* mdnotesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		54CDF9792439AD23006BAB2D /* libmdnotes.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmdnotes.a;
+			remoteRef = 54CDF9782439AD23006BAB2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		54CDF97B2439AD23006BAB2D /* mdnotes */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = mdnotes;
+			remoteRef = 54CDF97A2439AD23006BAB2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5472DE5E24395BF50033E4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5472DE6E24395BF60033E4BA /* Main.storyboard in Resources */,
+				5472DE6B24395BF60033E4BA /* Preview Assets.xcassets in Resources */,
+				5472DE6824395BF60033E4BA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5472DE7324395BF60033E4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5472DE7E24395BF60033E4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5472DE5C24395BF50033E4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54F5015F243972D200035478 /* WebView.swift in Sources */,
+				5472DE6624395BF50033E4BA /* ContentView.swift in Sources */,
+				543435DE243ABCE500E0D316 /* MdNotes.swift in Sources */,
+				5472DE6424395BF50033E4BA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5472DE7124395BF60033E4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5472DE7A24395BF60033E4BA /* mdnotesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5472DE7C24395BF60033E4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5472DE8524395BF60033E4BA /* mdnotesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5472DE7724395BF60033E4BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5472DE5F24395BF50033E4BA /* mdnotes */;
+			targetProxy = 5472DE7624395BF60033E4BA /* PBXContainerItemProxy */;
+		};
+		5472DE8224395BF60033E4BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5472DE5F24395BF50033E4BA /* mdnotes */;
+			targetProxy = 5472DE8124395BF60033E4BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5472DE6C24395BF60033E4BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5472DE6D24395BF60033E4BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5472DE8724395BF60033E4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5472DE8824395BF60033E4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5472DE8A24395BF60033E4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = mdnotes/mdnotes.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"mdnotes/Preview Content\"";
+				DEVELOPMENT_TEAM = ZXDMRALBK7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = mdnotes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylowen.mdnotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mdnotes/mdnotes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5472DE8B24395BF60033E4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = mdnotes/mdnotes.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"mdnotes/Preview Content\"";
+				DEVELOPMENT_TEAM = ZXDMRALBK7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = mdnotes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylowen.mdnotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mdnotes/mdnotes-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5472DE8D24395BF60033E4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXDMRALBK7;
+				INFOPLIST_FILE = mdnotesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylowen.mdnotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mdnotes.app/Contents/MacOS/mdnotes";
+			};
+			name = Debug;
+		};
+		5472DE8E24395BF60033E4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXDMRALBK7;
+				INFOPLIST_FILE = mdnotesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylowen.mdnotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mdnotes.app/Contents/MacOS/mdnotes";
+			};
+			name = Release;
+		};
+		5472DE9024395BF60033E4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXDMRALBK7;
+				INFOPLIST_FILE = mdnotesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylowen.mdnotesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = mdnotes;
+			};
+			name = Debug;
+		};
+		5472DE9124395BF60033E4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXDMRALBK7;
+				INFOPLIST_FILE = mdnotesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylowen.mdnotesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = mdnotes;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5472DE5B24395BF50033E4BA /* Build configuration list for PBXProject "mdnotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5472DE8724395BF60033E4BA /* Debug */,
+				5472DE8824395BF60033E4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5472DE8924395BF60033E4BA /* Build configuration list for PBXNativeTarget "mdnotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5472DE8A24395BF60033E4BA /* Debug */,
+				5472DE8B24395BF60033E4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5472DE8C24395BF60033E4BA /* Build configuration list for PBXNativeTarget "mdnotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5472DE8D24395BF60033E4BA /* Debug */,
+				5472DE8E24395BF60033E4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5472DE8F24395BF60033E4BA /* Build configuration list for PBXNativeTarget "mdnotesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5472DE9024395BF60033E4BA /* Debug */,
+				5472DE9124395BF60033E4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5472DE5824395BF50033E4BA /* Project object */;
+}
