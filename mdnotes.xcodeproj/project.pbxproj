@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DB594DD094E297C1124DEA4 /* NotesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB59D8EC50BC99115D9B893 /* NotesWindowController.swift */; };
 		543435DE243ABCE500E0D316 /* MdNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543435DD243ABCE500E0D316 /* MdNotes.swift */; };
 		5472DE6424395BF50033E4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE6324395BF50033E4BA /* AppDelegate.swift */; };
-		5472DE6624395BF50033E4BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE6524395BF50033E4BA /* ContentView.swift */; };
+		5472DE6624395BF50033E4BA /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE6524395BF50033E4BA /* NotesView.swift */; };
 		5472DE6824395BF60033E4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5472DE6724395BF60033E4BA /* Assets.xcassets */; };
 		5472DE6B24395BF60033E4BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5472DE6A24395BF60033E4BA /* Preview Assets.xcassets */; };
 		5472DE6E24395BF60033E4BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5472DE6C24395BF60033E4BA /* Main.storyboard */; };
@@ -52,10 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DB59D8EC50BC99115D9B893 /* NotesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesWindowController.swift; sourceTree = "<group>"; };
 		543435DD243ABCE500E0D316 /* MdNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MdNotes.swift; sourceTree = "<group>"; };
 		5472DE6024395BF50033E4BA /* mdnotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdnotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5472DE6324395BF50033E4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5472DE6524395BF50033E4BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5472DE6524395BF50033E4BA /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		5472DE6724395BF60033E4BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5472DE6A24395BF60033E4BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5472DE6D24395BF60033E4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				5472DE6324395BF50033E4BA /* AppDelegate.swift */,
-				5472DE6524395BF50033E4BA /* ContentView.swift */,
+				5472DE6524395BF50033E4BA /* NotesView.swift */,
 				543435DD243ABCE500E0D316 /* MdNotes.swift */,
 				54F5015E243972D200035478 /* WebView.swift */,
 				54CDF97E2439B019006BAB2D /* mdnotes-Bridging-Header.h */,
@@ -135,6 +137,7 @@
 				5472DE6F24395BF60033E4BA /* Info.plist */,
 				5472DE7024395BF60033E4BA /* mdnotes.entitlements */,
 				5472DE6924395BF60033E4BA /* Preview Content */,
+				1DB59D8EC50BC99115D9B893 /* NotesWindowController.swift */,
 			);
 			path = mdnotes;
 			sourceTree = "<group>";
@@ -342,9 +345,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F5015F243972D200035478 /* WebView.swift in Sources */,
-				5472DE6624395BF50033E4BA /* ContentView.swift in Sources */,
+				5472DE6624395BF50033E4BA /* NotesView.swift in Sources */,
 				543435DE243ABCE500E0D316 /* MdNotes.swift in Sources */,
 				5472DE6424395BF50033E4BA /* AppDelegate.swift in Sources */,
+				1DB594DD094E297C1124DEA4 /* NotesWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

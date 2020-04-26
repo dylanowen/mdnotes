@@ -18,6 +18,8 @@ use warp::path;
 use warp::reject::{self, Rejection};
 use warp::reply::Response;
 
+/// Taken from: https://github.com/seanmonstar/warp/blob/master/src/filters/fs.rs
+
 pub async fn serve_file(path: &PathBuf, tail: path::Tail) -> Result<Response, Rejection> {
     let mut file_path = sanitize_path(path, tail.as_str())?;
     let is_dir = tokio::fs::metadata(file_path.clone())
@@ -57,16 +59,6 @@ fn sanitize_path(path: &PathBuf, tail: &str) -> Result<PathBuf, Rejection> {
     }
     Ok(buf)
 }
-
-// // Silly wrapper since Arc<PathBuf> doesn't implement AsRef<Path> ;_;
-// #[derive(Clone, Debug)]
-// struct ArcPath(Arc<PathBuf>);
-//
-// impl AsRef<Path> for ArcPath {
-//     fn as_ref(&self) -> &Path {
-//         (*self.0).as_ref()
-//     }
-// }
 
 async fn file_reply(path: PathBuf) -> Result<Response, Rejection> {
     let file_result = TkFile::open(path.clone()).await;

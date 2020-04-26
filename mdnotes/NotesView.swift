@@ -9,25 +9,30 @@
 import SwiftUI
 import WebKit
 
-struct ContentView: View {
+struct NotesView: View {
 
-    let url: URL
+    let initialUrl: URL
 
     public init(url: URL) {
-        self.url = url
+        self.initialUrl = url
     }
 
     @ObservedObject var webViewStore = WebViewStore()
 
     var body: some View {
         WebView(webView: webViewStore.webView)
-            .onAppear {
-                print("loading iew")
-                print(self.url)
-                self.webViewStore.webView.load(
-                    URLRequest(url: self.url)
-                )
-        }
+                .onAppear {
+                    print("loading view")
+                    print(self.initialUrl)
+
+                    self.navigate(url: self.initialUrl)
+                }
+    }
+
+    func navigate(url: URL) {
+        self.webViewStore.webView.load(
+                URLRequest(url: self.initialUrl)
+        )
     }
 
 //    func goBack() {
@@ -42,6 +47,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(url: URL(string: "https://google.com")!)
+        NotesView(url: URL(string: "https://google.com")!)
     }
 }
