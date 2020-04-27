@@ -12,7 +12,7 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var window: NSWindow!
+    var notesWindows: [NSWindowController: UInt8] = [NSWindowController: UInt8]()
 
     private let runtime: MdNotesRuntime = MdNotesRuntime.shared
 
@@ -20,6 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        NotificationCenter.default.addObserver(self, selector: #selector(windowDidClose(_:)), name: NSWindow.willCloseNotification, object: nil)
+
         openNotes()
     }
 
@@ -32,18 +34,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openNotes()
     }
 
+    @objc func windowDidClose(_ notification: Notification) {
+        let window = notification.object as! NSWindow
+
+        if let notes_id = window.windowController.flatMap({ self.notesWindows.removeValue(forKey: $0) }) {
+            self.runtime.closeNotes(id: notes_id)
+        }
+    }
+
     func openNotes() {
         if let path = openPrompt() {
             let window = NSWindow(
                     contentRect: NSRect(x: 0, y: 0, width: 1200, height: 800),
                     styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-                    backing: .buffered, defer: false)
-            window.center()
-            //window.contentView = NSHostingView(rootView: LoadingView())
+                    backing: .buffered,
+                    defer: false
+            )
             window.title = path
+            window.center()
 
-            window.makeKeyAndOrderFront(nil)
+            let controller = NSWindowController(window: window)
+            controller.showWindow(self)
 
+            // TODO this threading probably does nothing
             DispatchQueue.main.async {
                 let note_id = self.runtime.openNotes(path: path)
 
@@ -53,13 +66,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
                 // Create the window and set the content view.
                 let contentView = NotesView(url: URL(string: serverUrl)!)
-
-                contentView.navigate(url: URL(string: serverUrl)!)
+                // TODO doesn't work: contentView.navigate(url: URL(string: serverUrl)!)
 
                 window.contentView = NSHostingView(rootView: contentView)
-            }
 
-            let windowController = NotesWindowController(window: window)
+                self.notesWindows[controller] = note_id
+            }
         }
     }
 

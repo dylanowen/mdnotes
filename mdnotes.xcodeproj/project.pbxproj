@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DB594DD094E297C1124DEA4 /* NotesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB59D8EC50BC99115D9B893 /* NotesWindowController.swift */; };
 		543435DE243ABCE500E0D316 /* MdNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543435DD243ABCE500E0D316 /* MdNotes.swift */; };
 		5472DE6424395BF50033E4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE6324395BF50033E4BA /* AppDelegate.swift */; };
 		5472DE6624395BF50033E4BA /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5472DE6524395BF50033E4BA /* NotesView.swift */; };
@@ -53,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1DB59D8EC50BC99115D9B893 /* NotesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesWindowController.swift; sourceTree = "<group>"; };
 		543435DD243ABCE500E0D316 /* MdNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MdNotes.swift; sourceTree = "<group>"; };
 		5472DE6024395BF50033E4BA /* mdnotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdnotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5472DE6324395BF50033E4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				5472DE6F24395BF60033E4BA /* Info.plist */,
 				5472DE7024395BF60033E4BA /* mdnotes.entitlements */,
 				5472DE6924395BF60033E4BA /* Preview Content */,
-				1DB59D8EC50BC99115D9B893 /* NotesWindowController.swift */,
 			);
 			path = mdnotes;
 			sourceTree = "<group>";
@@ -348,7 +345,6 @@
 				5472DE6624395BF50033E4BA /* NotesView.swift in Sources */,
 				543435DE243ABCE500E0D316 /* MdNotes.swift in Sources */,
 				5472DE6424395BF50033E4BA /* AppDelegate.swift in Sources */,
-				1DB594DD094E297C1124DEA4 /* NotesWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

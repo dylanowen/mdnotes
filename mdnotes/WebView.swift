@@ -12,8 +12,11 @@ public class WebViewStore: ObservableObject {
         }
     }
 
-    public init(webView: WKWebView = WKWebView()) {
-        self.webView = webView
+    public init(navigationDelegate: WKNavigationDelegate? = nil) {
+        self.webView = WKWebView()
+        self.webView.allowsBackForwardNavigationGestures = true
+        self.webView.navigationDelegate = navigationDelegate
+
         setupObservers()
     }
 

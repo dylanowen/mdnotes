@@ -12,12 +12,13 @@ import WebKit
 struct NotesView: View {
 
     let initialUrl: URL
+    let navigationDelegate: WebViewDelegate = WebViewDelegate()
+    @ObservedObject var webViewStore: WebViewStore
 
     public init(url: URL) {
         self.initialUrl = url
+        self.webViewStore = WebViewStore(navigationDelegate: self.navigationDelegate)
     }
-
-    @ObservedObject var webViewStore = WebViewStore()
 
     var body: some View {
         WebView(webView: webViewStore.webView)
@@ -34,16 +35,25 @@ struct NotesView: View {
                 URLRequest(url: self.initialUrl)
         )
     }
-
-//    func goBack() {
-//        webViewStore.webView.goBack()
-//    }
-//
-//    func goForward() {
-//        webViewStore.webView.goForward()
-//    }
 }
 
+class WebViewDelegate: NSObject, WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if let url = navigationAction.request.url {
+            // TODO check our port here
+            if url.host == "localhost" {
+                decisionHandler(.allow)
+                return
+            }
+            else {
+                // this isn't a url for our local server so open it in our default browser
+                NSWorkspace.shared.open(url)
+            }
+        }
+
+        decisionHandler(.cancel)
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

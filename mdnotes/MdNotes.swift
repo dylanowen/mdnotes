@@ -17,13 +17,16 @@ class MdNotesRuntime {
 
     private init() {
         rust = md_notes_runtime_new()
-        print("Created our Rust runtime")
     }
     
     func openNotes(path: String) -> UInt8 {
         let raw_path = (path as NSString).utf8String
 
         return md_notes_runtime_open_notes(rust, raw_path)
+    }
+
+    func closeNotes(id: UInt8) {
+        md_notes_runtime_close_notes(rust, id)
     }
     
     func serverPort() -> UInt16 {
@@ -32,6 +35,5 @@ class MdNotesRuntime {
 
     deinit {
         md_notes_runtime_free(rust)
-        print("Freed our Rust runtime")
     }
 }
