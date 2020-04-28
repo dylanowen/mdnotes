@@ -62,10 +62,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
                 //print(path?.absoluteString)
                 let serverPort = self.runtime.serverPort()
-                let serverUrl = "http://localhost:" + String(serverPort) + "/" + String(note_id) + "/static/"
+                let serverBaseUrl = URL(string: "http://localhost:" + String(serverPort))!
+                let serverUrl = serverBaseUrl.appendingPathComponent(String(note_id))
+                        .appendingPathComponent("static", isDirectory: true)
 
                 // Create the window and set the content view.
-                let contentView = NotesView(url: URL(string: serverUrl)!)
+                let contentView = NotesView(validBaseUrl: serverBaseUrl, url: serverUrl)
                 // TODO doesn't work: contentView.navigate(url: URL(string: serverUrl)!)
 
                 window.contentView = NSHostingView(rootView: contentView)

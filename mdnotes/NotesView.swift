@@ -12,10 +12,12 @@ import WebKit
 struct NotesView: View {
 
     let initialUrl: URL
-    let navigationDelegate: WebViewDelegate = WebViewDelegate()
+    let navigationDelegate: WebViewDelegate
     @ObservedObject var webViewStore: WebViewStore
 
-    public init(url: URL) {
+    public init(validBaseUrl: URL, url: URL) {
+        self.navigationDelegate = WebViewDelegate(validBase: validBaseUrl)
+
         self.initialUrl = url
         self.webViewStore = WebViewStore(navigationDelegate: self.navigationDelegate)
     }
@@ -38,25 +40,27 @@ struct NotesView: View {
 }
 
 class WebViewDelegate: NSObject, WKNavigationDelegate {
+
+    let validBase: URL
+
+    init(validBase: URL) {
+        self.validBase = validBase
+    }
+
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url {
-            // TODO check our port here
-            if url.host == "localhost" {
+            // check scheme://host:port
+            if self.validBase.scheme == url.scheme &&
+                       self.validBase.host == url.host &&
+                       self.validBase.port == url.port {
                 decisionHandler(.allow)
                 return
-            }
-            else {
+            } else {
                 // this isn't a url for our local server so open it in our default browser
                 NSWorkspace.shared.open(url)
             }
         }
 
         decisionHandler(.cancel)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotesView(url: URL(string: "https://google.com")!)
     }
 }
